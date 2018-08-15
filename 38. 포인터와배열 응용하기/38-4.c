@@ -8,12 +8,12 @@ int main()
 
     scanf("%d %d", &row, &col);
 
-    int **m = malloc(sizeof(int *) * row);   // 이중 포인터에 (int 포인터 크기 * row)만큼
+    int **m = (int**)malloc(sizeof(int *) * row);   // 이중 포인터에 (int 포인터 크기 * row)만큼
                                              // 동적 메모리 할당. 배열의 세로
 
     for (int i = 0; i < row; i++)            // 세로 크기만큼 반복
     {
-        m[i] = malloc(sizeof(int) * col);    // (int의 크기 * col)만큼 동적 메모리 할당. 배열의 가로
+        m[i] = (int*)malloc(sizeof(int) * col);    // (int의 크기 * col)만큼 동적 메모리 할당. 배열의 가로
     }
 
     for (int i = 0; i < row; i++)    // 세로 크기만큼 반복

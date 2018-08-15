@@ -3,12 +3,12 @@
 
 int main()
 {
-    int **m = malloc(sizeof(int *) * 3);   // 이중 포인터에 (int 포인터 크기 * 세로 크기)만큼
+    int **m = (int**)malloc(sizeof(int *) * 3);   // 이중 포인터에 (int 포인터 크기 * 세로 크기)만큼
                                            // 동적 메모리 할당. 배열의 세로
 
     for (int i = 0; i < 3; i++)            // 세로 크기만큼 반복
     {
-        m[i] = malloc(sizeof(int) * 4);    // (int 크기 * 가로 크기)만큼 동적 메모리 할당.
+        m[i] = (int*)malloc(sizeof(int) * 4);    // (int 크기 * 가로 크기)만큼 동적 메모리 할당.
                                            // 배열의 가로
     }
 
